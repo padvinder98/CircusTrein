@@ -13,26 +13,21 @@ namespace CircusTrein.ApplicationCore.Models
             Wagons = new List<Wagon>();
         }
 
-        public Wagon CreateNewWagon()
-        {
-            var newWagon = new Wagon();
-
-            Wagons.Add(newWagon);
-
-            return newWagon;
-        }
-
         public void PlaceAllAnimals(List<Animal> animals)
         {
             foreach (var animal in animals)
             {
-                if (animal.IsAnimalLargeCarnivore())
+                PlaceAnimalInWagon(animal);
+            }
+        }
+
+        public void PlaceAnimalInWagon(Animal animal)
+        {
+            foreach (var wagon in Wagons)
+            {
+                if (wagon.CanAnimalBePlacedInWagon(animal))
                 {
-                    var wagon = CreateNewWagon();
-
                     wagon.AddAnimalToWagon(animal);
-
-                    break;
                 }
             }
         }

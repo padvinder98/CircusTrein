@@ -9,26 +9,26 @@ namespace CircusTrein.Test
     public class AnimalUnitTest
     {
         [TestMethod]
-        public void Animal_IsAnimalLargeCarnivore_true()
+        public void Animal_IsHerbivore_true()
         {
             // Arrange
-            Animal animal = new Animal(AnimalSize.Large, AnimalDiet.Carnivore);
+            Animal animal = new Animal(AnimalSize.Large, AnimalDiet.Herbivore);
 
             // Act
-            bool output = animal.IsAnimalLargeCarnivore();
+            bool output = animal.IsHerbivore();
 
             // Assert
             output.Should().BeTrue();
         }
 
         [TestMethod]
-        public void Animal_IsAnimalLargeCarnivore_false()
+        public void Animal_IsHerbivore_false()
         {
             // Arrange
-            Animal animal = new Animal(AnimalSize.Large, AnimalDiet.Herbivore);
+            Animal animal = new Animal(AnimalSize.Large, AnimalDiet.Carnivore);
 
             // Act
-            bool output = animal.IsAnimalLargeCarnivore();
+            bool output = animal.IsHerbivore();
 
             // Assert
             output.Should().BeFalse();

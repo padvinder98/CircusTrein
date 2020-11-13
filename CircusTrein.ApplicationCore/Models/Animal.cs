@@ -16,9 +16,9 @@ namespace CircusTrein.ApplicationCore.Models
             AnimalDiet = animalDiet;
         }
 
-        public bool IsAnimalLargeCarnivore()
+        public bool IsHerbivore()
         {
-            if (AnimalSize == AnimalSize.Large && AnimalDiet == AnimalDiet.Carnivore)
+            if (AnimalDiet == AnimalDiet.Herbivore)
             {
                 return true;
             }
